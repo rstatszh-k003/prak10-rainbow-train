@@ -126,6 +126,10 @@ kundenprofile %>%
 einkaeufe_preise <- einkaeufe %>% 
   left_join(preise)
 
+einkaeufe %>% 
+  rename(produkt = produkt_name) %>% 
+  left_join(preise, by = c("produkt" = "produkt_name"))
+
 ```
 
 3. Strick das Dokument und dann: git add, commit, push alle Veränderung zurück auf GitHub
