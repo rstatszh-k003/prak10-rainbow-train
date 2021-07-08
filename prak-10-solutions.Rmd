@@ -88,10 +88,13 @@ Schaut euch den Output in der Console jeweils genau an und überlegt welche join
 
 ```{r}
 
+preise %>% 
+  left_join(einkaeufe)
+
 # Kombination 1
 
 preise %>% 
-  left_join(einkaeufe)
+  left_join(einkaeufe, by = c("produkt_name" = "produkt_name"))
 
 # Kombination 2
 
